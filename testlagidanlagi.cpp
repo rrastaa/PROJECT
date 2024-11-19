@@ -13,7 +13,7 @@ void creation(){
     cout<<"Enter Your Name      : ";getline(cin>>ws,name);
     cout<<"Enter Your Gender    : ";cin>>gender;
     cout<<endl<<"Hi, "<<name<<". Welcome To Your Life"<<endl<<endl;
-
+udufdfd
    profile();
 
 }
