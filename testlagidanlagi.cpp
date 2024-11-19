@@ -13,7 +13,7 @@ void creation(){
     cout<<"Enter Your Name      : ";getline(cin>>ws,name);
     cout<<"Enter Your Gender    : ";cin>>gender;
     cout<<endl<<"Hi, "<<name<<". Welcome To Your Life"<<endl<<endl;
-udufdfd
+
    profile();
 
 }
@@ -32,10 +32,13 @@ void baby()
     switch (opt)
     {
     case 1:
+        cout<<endl;
+        cout<<"-----------------------------------------------------"<<endl;
         cout<<"I learn walk with ma mom"<<endl;
-        cout<<"I fall when try walk,what will you do?";
-        cout<<"1.Cry"<<endl;
-        cout<<"2.Try to walk again"<<endl;
+        cout<<"I fell when I am trying walk, what would you do?"<<endl;
+        cout<<"-----------------------------------------------------"<<endl<<endl;
+        cout<<"1.) Cry"<<endl;
+        cout<<"2.) Try to walk again"<<endl;
         cout<<"Option : ";cin>>option;
         if (option==1)
         {
@@ -48,8 +51,10 @@ void baby()
         // KASI IF ELSE SMARTNESS 
         break;
     case 2:
+        cout<<"-----------------------------------------------------"<<endl;
         cout<<"Your mom brought u to vaksin in hospital"<<endl;
         cout<<"What will you do"<<endl;
+        cout<<"-----------------------------------------------------"<<endl;
         cout<<"1.Cry"<<endl;
         cout<<"2.Stay Cool"<<endl;
         cout<<"3.Bite the doctor"<<endl;
@@ -106,4 +111,5 @@ void profile(){
     cout<<"Smartness    : "<<c<<"\t\tMoney          : "<<money<<endl;
     health=a,looks=b,smartness=c,money=0;
 }
+
 
