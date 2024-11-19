@@ -112,4 +112,3 @@ void profile(){
     health=a,looks=b,smartness=c,money=0;
 }
 
-
