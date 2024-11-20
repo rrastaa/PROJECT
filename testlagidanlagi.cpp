@@ -3,7 +3,7 @@
 using namespace std;
 string back;
 int health,money=0,looks,smartness,happiness,opt,option,activity_baby=0,activity_kid=0;
-string name;
+string name,activity;
 char gender;
 void kid();
 void baby(),baby1(),toddler(),youngadult(),adult(),elder(),story();
@@ -16,7 +16,8 @@ void creation(){
     int a,b,c;
 
     srand(time(0));
-    health=1+rand()%10,smartness=1+rand()%10,looks=1+rand()%10; 
+    health=1+rand()%10,smartness=1+rand()%10,looks=1+rand()%10,
+    happiness=1+rand()%10; 
     cout<<endl<<"--------[Creating a Player]--------"<<endl;
     cout<<endl;
     cout<<"Enter Your Name      : ";getline(cin>>ws,name);
@@ -36,9 +37,9 @@ void menu(){
     {
         cout<<endl;
         cout<<"----------[ MAIN MENU ]----------"<<endl<<endl;
-        cout<<"1.) Continue "<<endl;
+        cout<<"1.) Story "<<endl;
         cout<<"2.) Show Stats"<<endl;
-        cout<<"3.) Activity"<<endl<<endl;
+        cout<<"3.) Other Activity"<<endl<<endl;
         cout<<"---------------------------------"<<endl;
         cout<<"Option : ";cin>>option;
         switch (option)
@@ -50,6 +51,8 @@ void menu(){
         profile();
         break;
         case 3:
+        Activity();
+        break;
         default:
             break;
         }
@@ -59,7 +62,7 @@ void menu(){
 void baby()
 {
 
-  
+   activity="baby";
     srand(time(0));
     int usedCases[5] = {}; // Array untuk melacak case yang sudah dipilih
     
@@ -205,15 +208,16 @@ void profile(){
     cout<<"\t\tThis Is Your Stats"<<endl<<endl;
 
     cout<<"\tPlayer Name  : "<<name<<endl;
-    cout<<"\tGender       : "<<gender<<endl<<endl;
+    cout<<"\tGender       : "<<gender<<"\t\t Money:"<<money<<endl<<endl;
 
-    cout<<"Health       : "<<health<<"\t\tLooks          : "<<looks<<endl;
-    cout<<"Smartness    : "<<smartness<<"\t\tMoney          : "<<money<<endl<<endl<<endl;
+    cout<<"Health       : "<<health<<"\t\tLooks         : "<<looks<<endl;
+    cout<<"Smartness    : "<<smartness<<"\t\tHappiness     : "<<happiness<<endl<<endl<<endl;
     cout<<"------------------------------------------------------------------"<<endl<<endl;
 
 }
 
  void kid(){
+    activity="kid";
     srand(time(0));
     int usedCases[5] = {}; // Array untuk melacak case yang sudah dipilih
     
@@ -343,7 +347,7 @@ void profile(){
             break;
 
         case 9:
-            cout << "You see other kids playing. Do you join them?\n1. Yes\n2. No\nOption: ";
+            cout << "You see other kids playing. Do you want to join them?\n1. Yes\n2. No\nOption: ";
             cin >> option;
             if (option == 1) {
                 cout << "You made new friends and had fun!\n";
@@ -355,13 +359,14 @@ void profile(){
             break;
 
         case 10:
-            cout << "You found a candy on the floor. Will you eat it?\n1. Yes\n2. No\nOption: ";
+            cout << "You found a Money on the floor. Will you take it?\n1. Yes\n2. No\nOption: ";
             cin >> option;
             if (option == 1) {
-                cout << "You ate the candy, but it made you sick.\n";
-                health -= 10;
+                cout << "You take the money, your father accidently saw it and it made him mad \n";
+                money += 10;
+                happiness-=10;
             } else {
-                cout << "You decided not to eat it. Good choice!\n";
+                cout << "You decided not to take it. Good choice!\n";
             }
             break;
 
@@ -370,15 +375,20 @@ void profile(){
             break;
         }
         
-    
+    cout<<"Do U want to go back to the menu (y/n)";cin>>back;
+            if (back=="y")
+            {
+                menu();
+            }
+
  }
+     kidphase=true;
  }
 
  void story()
  {
     do
     {
-        
         baby();
         babyphase=true;
         if (babyphase==true)
@@ -388,7 +398,6 @@ void profile(){
             {
                 //young adult
             }
-
             else
             {
 
@@ -400,10 +409,18 @@ void profile(){
 
         }
     } while (babyphase==false);
-    
-    
-
-    
-    
-    
  }
+void Activity(){
+    if (activity=="baby")
+    {
+        cout<<"You still baby bro cant do nothing"<<endl; //GANTI RAS KATAKATANYA
+    }else if (activity=="kid")
+    {
+        cout<<"\t ACTIVITY"<<endl;
+        cout<<"1. Play with Friends"<<endl;
+        cout<<"2. Study"<<endl;
+        cout<<"option";cin>>option;
+    }
+    
+    
+}
